@@ -1,0 +1,18 @@
+<div class="main items-index">
+  <div class="container">
+    <% @items.each do |item| %>
+      <div class="item-index-item">
+        <%= link_to(item.name, "/items/#{item.id}") %>
+      </div>
+      <div class="item-left">
+        <img src="<%= "/user_images/#{item.user.image_name}" %>">
+      </div>
+      <div class="item-right">
+        <div class="item-user-name">
+          <%= link_to(item.user.name, "/users/#{item.user.id}") %>
+        </div>
+          <%= link_to(item.content, "/items/#{item.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>

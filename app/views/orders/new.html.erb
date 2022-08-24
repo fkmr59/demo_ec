@@ -1,0 +1,22 @@
+<div class="main orders-new">
+  <div class="container">
+    <h1 class="form-heading">注文画面</h1>
+      <%= @cart.id %>
+      
+      <%= @onitems.id %>
+      <%= @onitems.name %>
+      <%= @onitems.price%>
+      
+      <%= @cart.quantity %>
+      
+      <%= form_tag("/orders/#{@cart.id}/create") do %>
+        <div class="form">
+          <div class="form-body">
+            <%= @onitems.price * @cart.quantity %>
+            <input type="hidden" name="total_price" value="<%= @onitems.price * @cart.quantity %>">
+            <input type="submit" value="お届け先入力">
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

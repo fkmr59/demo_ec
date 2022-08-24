@@ -1,0 +1,58 @@
+<div class="main addresses-new">
+  <div class="container">
+    <h1 class="form-heading">注文確認画面</h1>
+      <p>
+        <%= @order.id %>
+        <%= @order.user_id %>
+        <%= @order.item_id %>
+        <%= @order.cart_id %>
+        <%= @onitems.name %>
+        <%= @order.total_price %>
+      </p>
+      <%= form_tag("/addresses/#{@order.id}/create") do %>
+        <div class="form">
+          <div class="form-body">
+              <div>
+                <label>姓</label>
+                  <input type="text" name="family_name" placeholder="例:田中" required>
+                <label>名</label>
+                  <input type="text" name="given_name" placeholder="例:太郎" required>
+              </div>
+              <div>
+                <label>電話番号</label>
+                  <input type="tel" name="tel" placeholder="例:090-0000-0000" required>
+              </div>
+              <div>
+                <label>メールアドレス</label>
+                  <input type="email" name="email" placeholder="例:abc@gmail.com" required>
+              </div>
+              <div>
+                <label>郵便番号</label>
+                  <input type="postal" name="postal_code" placeholder="例:899-0000" required>
+              </div>
+              <div>
+                <label>都道府県</label>
+                  <input type="address" name="address_level1" placeholder="例:◯◯◯県" required>
+              </div>
+              <div>
+                <label>市区町村</label>
+                  <input type="address" name="address_level2" placeholder="例:◯◯◯市" required>
+              </div>
+              <div>
+                <label>番号・マンション名1</label>
+                  <input type="address" name="address_line1" placeholder="例:1234-56,1234番地56" required>
+              </div>
+              <div>
+                <label>番号・マンション名2</label>
+                  <input type="address" name="address_line2" placeholder="例:コーポ◯◯,マンション◯◯">
+              </div>
+              <div>
+                <label>会社名</label>
+                  <input type="organization" name="organization" placeholder="例:株式会社◯◯,(株)◯◯">
+              </div>
+            <input type="submit" value="注文確定">
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

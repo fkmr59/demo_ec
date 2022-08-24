@@ -1,0 +1,32 @@
+<div class="main carts-index">
+  <div class="container">
+    <h1 class="form-heading">カート内容画面</h1>
+      <p>
+        <% @carts.each do |cart| %>
+          <p hidden>
+          <%= link_to(@current_user.name, "/carts/#{cart.id}/edit") %>
+          <%= link_to(@oncartitemid = cart.item_id, "/carts/#{cart.id}/edit") %>
+          </p>
+          <%= link_to(cart.id, "/carts/#{cart.id}/edit") %>
+          
+          <% @onitems.each do |item| %>
+            <p hidden>
+            <%= link_to(@onitemid = item.id, "/carts/#{cart.id}/edit") %>
+            </p>
+            <% if @oncartitemid == @onitemid %>
+              <%= link_to(item.name, "/carts/#{cart.id}/edit") %>
+              <%= link_to(item.price, "/carts/#{cart.id}/edit") %>
+            <% end %>
+          <% end %>
+          
+          <%= link_to(cart.quantity, "/carts/#{cart.id}/edit") %>
+          
+          <p>
+            <%= link_to("削除", "/carts/#{cart.id}/destroy", {method: "post"}) %>
+            <%= link_to("注文画面へ", "/orders/#{cart.id}/new") %>
+          </p>
+          
+        <% end %>
+      </p>
+  </div>
+</div>

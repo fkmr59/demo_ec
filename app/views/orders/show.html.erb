@@ -1,0 +1,33 @@
+<div class="main orders-index">
+  <div class="container">
+    <h1 class="form-heading">注文履歴画面</h1>
+      <p>
+        <% @address.each do |address| %>
+          <P hidden>
+          <%= address.id %>
+          <%= @onaddressitem = address.item_id %>
+          </p>
+          <%= @onaddressorder = address.order_id %>
+        
+        <p hidden>
+        <% @buyitem.each do |item| %>
+          <%= @onitem = item.id %>
+          <% if @onaddressitem == @onitem %>
+            <%= @onitemname = item.name %>
+          <% end %>
+        <% end %>
+        </p>
+        
+        <%= @onitemname %>
+        
+        <% @buyorder.each do |order| %>
+          <p hidden><% @onorder = order.id %></p>
+          <% if @onaddressorder == @onorder %>
+            <%= order.total_price %>
+          <% end %>
+        <% end %>    
+          
+        <% end %>
+      </p>
+  </div>
+</div>

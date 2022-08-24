@@ -1,0 +1,23 @@
+<div class="main carts-new">
+  <div class="container">
+    <h1 class="form-heading">カートに入れる</h1>
+      <p>
+        <%= @item.id %>
+        <%= @item.name %>
+        <%= @item.price %>
+      </p>
+      <%= form_tag("/carts/#{@item.id}/create") do %>
+        <div class="form">
+          <div class="form-body">
+            <% @cart.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+            <% end %>
+            <input type="number" name="quantity" min="0">
+            <input type="submit" value="カートに入れる">
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

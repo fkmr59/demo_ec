@@ -1,0 +1,23 @@
+<div class="main items-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+      <p>
+        <%= @current_user.name %>
+        <% @items.each do |item| %>
+          <%= item.name %>
+          <%= item.price %>
+        <% end %>
+      </p>
+      <%= form_tag("/carts/#{@cart.id}/update",{multipart: true}) do %>
+        <div class="form">
+          <div class="form-body">
+            <p>
+              <%= @cart.quantity %>
+            </p>
+            <input type="number" name="quantity" min="0">
+            <input type="submit" value="更新">
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
