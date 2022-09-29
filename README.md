@@ -8,13 +8,17 @@
    
  - 出品の簡素化を目標に構築
    
-## TESTアカウント
-   
-   [**DemoSiteEc**]https://protected-shelf-62318.herokuapp.com
+## サイト掲載
+   [DemoSiteEc](https://protected-shelf-62318.herokuapp.com)
 
+## TESTアカウント
  - メールアドレス:demo@email.com
- - パスワード:demo
- - 
+
+   パスワード:demo
+   
+ - メールアドレス:test@email.com
+  
+   パスワード:test
 
 ## 環境構成
 
