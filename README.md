@@ -8,6 +8,14 @@
    
  - 出品の簡素化を目標に構築
    
+## TESTアカウント
+   
+   [**DemoSiteEc**]https://protected-shelf-62318.herokuapp.com
+
+ - メールアドレス:demo@email.com
+ - パスワード:demo
+ - 
+
 ## 環境構成
 
  - ruby 3.1.2
