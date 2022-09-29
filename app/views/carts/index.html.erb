@@ -1,32 +1,42 @@
 <div class="main carts-index">
   <div class="container">
-    <h1 class="form-heading">カート内容画面</h1>
-      <p>
-        <% @carts.each do |cart| %>
-          <p hidden>
-          <%= link_to(@current_user.name, "/carts/#{cart.id}/edit") %>
-          <%= link_to(@oncartitemid = cart.item_id, "/carts/#{cart.id}/edit") %>
-          </p>
-          <%= link_to(cart.id, "/carts/#{cart.id}/edit") %>
-          
-          <% @onitems.each do |item| %>
-            <p hidden>
-            <%= link_to(@onitemid = item.id, "/carts/#{cart.id}/edit") %>
-            </p>
-            <% if @oncartitemid == @onitemid %>
-              <%= link_to(item.name, "/carts/#{cart.id}/edit") %>
-              <%= link_to(item.price, "/carts/#{cart.id}/edit") %>
+    <h1 class="form-heading">カート内容</h1>
+      <div class="cart-index-box">
+        <div class="index-cart-top">
+            <% @carts.each do |cart| %>
+              <p hidden>
+              <%= link_to(@current_user.name, "/carts/#{cart.id}/edit") %>
+              <%= link_to(@oncartitemid = cart.item_id, "/carts/#{cart.id}/edit") %>
+              <%= link_to(cart.id, "/carts/#{cart.id}/edit") %>
+              </p>
+              
+              <% @onitems.each do |item| %>
+                <p hidden>
+                <%= link_to(@onitemid = item.id, "/carts/#{cart.id}/edit") %>
+                </p>
+                <% if @oncartitemid == @onitemid %>
+                  <div class="index-cart-left">
+                    <label>商品名:</label>
+                      <%= link_to(item.name, "/items/#{item.id}") %>
+                  </div>
+                  <div class="index-cart-right">
+                    <label>価格:</label>
+                      <%= link_to(item.price, "/items/#{item.id}") %><label>円</label>
+                  </div>
+                <% end %>
+              <% end %>
+              
+                <label>注文予定個数:</label>
+                  <%= link_to(cart.quantity, "/items/#{cart.item_id}") %><label>個</label>
+              
+              <div class="cart-item-menus">
+                <%= link_to("削除", "/carts/#{cart.id}/destroy", {method: "post"}) %>
+                <%= link_to("変更", "/carts/#{cart.id}/edit") %><br>
+                <%= link_to("注文画面へ", "/orders/#{cart.id}/new") %>
+              </div>
+              
             <% end %>
-          <% end %>
-          
-          <%= link_to(cart.quantity, "/carts/#{cart.id}/edit") %>
-          
-          <p>
-            <%= link_to("削除", "/carts/#{cart.id}/destroy", {method: "post"}) %>
-            <%= link_to("注文画面へ", "/orders/#{cart.id}/new") %>
-          </p>
-          
-        <% end %>
-      </p>
+        </div>
+      </div>
   </div>
 </div>

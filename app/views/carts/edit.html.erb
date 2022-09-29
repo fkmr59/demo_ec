@@ -1,21 +1,24 @@
-<div class="main items-new">
+<div class="main carts-edit">
   <div class="container">
-    <h1 class="form-heading">編集する</h1>
+    <h1 class="form-heading">注文内容の変更</h1>
       <p>
-        <%= @current_user.name %>
         <% @items.each do |item| %>
-          <%= item.name %>
-          <%= item.price %>
+          <label>商品名:</label>
+            <%= item.name %><br>
+          <label>価格:</label>
+            <%= item.price %><label>円</label>
         <% end %>
       </p>
       <%= form_tag("/carts/#{@cart.id}/update",{multipart: true}) do %>
         <div class="form">
           <div class="form-body">
             <p>
-              <%= @cart.quantity %>
+              <label>注文予定個数:</label>
+              <%= @cart.quantity %><label>個</label>
             </p>
-            <input type="number" name="quantity" min="0">
-            <input type="submit" value="更新">
+            <label></label>
+            <input type="number" name="quantity" min="0" placeholder="例:変更する個数を入力">
+            <input type="submit" value="個数変更">
           </div>
         </div>
       <% end %>

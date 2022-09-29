@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## コンセプト
+   
+   農産物の規格外品を捨てるのではなく、欲しい人に手軽に届ける
+   
+## 特徴
+   
+   出品の簡素化を目標に構築
+   
+## 環境構成
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   ruby 3.1.2
+   Rails 7.0.2.3
+   psql (PostgreSQL) 10.22
+   payjp
+  
+## 使用技術
+   
+   AWS
+   
+## 課題（今後の改善等）
+   
+   デザインの修正（調整）
+   データの取得方法の検討（controller）
+   メール実装（購入者：決済完了メール・出品者：注文対応メール）
+   

@@ -5,15 +5,25 @@
         <img src="<%= "/user_images/#{@user.image_name}" %>">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
-      <p>
-        <%= @item.name %>
-        <%= @item.price %>
-        <img src="<%= "/item_images/#{@item.image_name}" %>">
-        <%= @item.content %>
-      </p>
-      <div class="item-time">
-        <%= @item.created_at %>
-      </div>
+        <p>
+          <label>商品名:</label>
+          <%= @item.name %>
+        </p>
+        <p>
+          <label>価格:</label>
+          <%= @item.price %><label>円</label>
+        </p>
+        <p>
+          <label>商品説明:</label>
+          <%= @item.content %>
+        </p>
+        <p class="item-show-img">
+          <img src="<%= "/item_images/#{@item.image_name}" %>">
+        </p>
+        
+        <div class="item-time">
+          <%= @item.created_at %>
+        </div>
       
       <% if Like.find_by(user_id: @current_user.id, item_id: @item.id) %>
         <%= link_to("/likes/#{@item.id}/destroy", {method: "post"}) do %>

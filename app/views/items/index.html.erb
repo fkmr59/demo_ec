@@ -1,18 +1,18 @@
 <div class="main items-index">
   <div class="container">
-    <% @items.each do |item| %>
-      <div class="item-index-item">
-        <%= link_to(item.name, "/items/#{item.id}") %>
+    <h1 class="form-heading">出品一覧</h1>
+      <div class="item-index-box"> 
+        <% @items.each do |item| %>
+          <div class="index-item-top">
+            <img src="<%= "/item_images/#{item.image_name}" %>">
+            <div class="index-item-left">
+              <label>商品名:</label><%= link_to(item.name, "/items/#{item.id}") %>
+            </div>
+            <div class="index-item-right">
+              <label>価格:</label><%= link_to(item.price, "/items/#{item.id}") %><label>円</label>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="item-left">
-        <img src="<%= "/user_images/#{item.user.image_name}" %>">
-      </div>
-      <div class="item-right">
-        <div class="item-user-name">
-          <%= link_to(item.user.name, "/users/#{item.user.id}") %>
-        </div>
-          <%= link_to(item.content, "/items/#{item.id}") %>
-      </div>
-    <% end %>
   </div>
 </div>

@@ -8,6 +8,15 @@ class AddressesController < ApplicationController
 
   def create
     if @order = Order.find_by(id: params[:id])
+       
+       require 'payjp'
+       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+       Payjp::Charge.create(
+         :amount => @order.total_price,
+         :card => params['payjp-token'],
+         :currency => 'jpy',
+       )
+       
        @address = Address.new(
         family_name: params[:family_name],
         given_name: params[:given_name],
@@ -35,4 +44,5 @@ class AddressesController < ApplicationController
         end
     end
   end
+  
 end

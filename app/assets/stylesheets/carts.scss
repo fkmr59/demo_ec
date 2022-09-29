@@ -1,0 +1,32 @@
+/* carts/index ================================ */
+.cart-index-box{
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+}
+
+.index-cart-top{
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.index-cart-left {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3px;
+}
+
+.index-cart-right {
+  display: flex;
+  align-items: flex-end;
+}
+
+.cart-item-menus {
+  padding-bottom: 2px;
+  border-bottom: 7px solid #7E57C2;
+  color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+}

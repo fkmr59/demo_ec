@@ -1,0 +1,25 @@
+/* orders/index ================================ */
+.order-index-box{
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+}
+
+.order-item-top{
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.order-item-left{
+  padding-top: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.order-item-right{
+  padding-top: 5px;
+  display: flex;
+  align-items: flex-end;
+}

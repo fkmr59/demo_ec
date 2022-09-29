@@ -1,6 +1,6 @@
 <div class="main items-new">
   <div class="container">
-    <h1 class="form-heading">投稿する</h1>
+    <h1 class="form-heading">商品を出品する</h1>
       <%= form_tag("/items/create") do %>
         <div class="form">
           <div class="form-body">
@@ -9,9 +9,12 @@
               <%= message %>
             </div>
             <% end %>
-            <textarea name="name"></textarea>
-            <textarea name="price"></textarea>
-            <textarea name="content"></textarea>
+            <label>商品名</label>
+            <textarea name="name" placeholder="例:apple" required></textarea>
+            <label>価格</label>
+            <textarea name="price" placeholder="例:1000" required></textarea>
+            <label>商品説明</label>
+            <textarea name="content" placeholder="例:1箱に10個入り" required></textarea>
             <input type="submit" value="掲載">
           </div>
         </div>

@@ -6,27 +6,36 @@
           <P hidden>
           <%= address.id %>
           <%= @onaddressitem = address.item_id %>
-          </p>
           <%= @onaddressorder = address.order_id %>
-        
-        <p hidden>
-        <% @buyitem.each do |item| %>
-          <%= @onitem = item.id %>
-          <% if @onaddressitem == @onitem %>
-            <%= @onitemname = item.name %>
-          <% end %>
-        <% end %>
-        </p>
-        
-        <%= @onitemname %>
-        
-        <% @buyorder.each do |order| %>
-          <p hidden><% @onorder = order.id %></p>
-          <% if @onaddressorder == @onorder %>
-            <%= order.total_price %>
-          <% end %>
-        <% end %>    
+          </p>
           
+          <p hidden>
+          <% @buyitem.each do |item| %>
+            <%= @onitem = item.id %>
+            <% if @onaddressitem == @onitem %>
+              <%= @onitemname = item.name %>
+            <% end %>
+          <% end %>
+          </p>
+          <div class="order-index-box">
+            <div class="order-item-top">
+              <div class="order-item-left">
+                <label>商品名:</label>
+                <%= @onitemname %>
+              </div>
+              
+                <% @buyorder.each do |order| %>
+                  <p hidden><% @onorder = order.id %></p>
+                  <% if @onaddressorder == @onorder %>
+                    <div class="order-item-right">
+                      <label>購入金額:</label>
+                      <%= order.total_price %><label>円</label>
+                    </div>
+                  <% end %>
+                <% end %>
+                <br>
+            </div>
+          </div>
         <% end %>
       </p>
   </div>

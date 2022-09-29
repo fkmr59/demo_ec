@@ -52,7 +52,6 @@ class ItemsController < ApplicationController
         flash[:notice] = "商品内容を編集しました"
         redirect_to("/items/index")
        else
-        #render("/items/edit")
         redirect_to("/items/#{@item.id}/edit")
        end
     end

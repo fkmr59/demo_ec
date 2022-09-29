@@ -8,22 +8,26 @@
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
+    
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
-    <% @user.items.each do |item| %>
-      <div class="items-index-item">
-        <div class="item-left">
-          <img src="<%= "/user_images/#{item.user.image_name}" %>">
-        </div>
-        <div class="item-right">
-          <div class="item-user-name">
-            <%= link_to(item.user.name, "/users/#{item.user.id}") %>
+    
+    <div class="user-top-container">
+      <% @user.items.each do |item| %>
+        <div class="user-item-box">
+          <div class="user-item-left">
+            <img src="<%= "/item_images/#{item.image_name}" %>">
           </div>
-            <%= link_to(item.content, "/items/#{item.id}") %>
+          <div class="user-item-right">
+            <div class="item-user-name">
+              <%= link_to(item.name, "/items/#{item.id}") %>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    
   </div>
 </div>

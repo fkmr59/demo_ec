@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   
-  post 'tests/pay' => 'tests#pay'
-  #post '/pay', to: 'pays#pay'
-  get 'tests/index' => 'tests#index'
-  
   get 'addresses/:id/new' => 'addresses#new'
   post 'addresses/:id/create' => 'addresses#create'
+  
   get 'orders/:id/new' => 'orders#new'
   get 'orders/show' => 'orders#show'
   post 'orders/:id/create' => 'orders#create'
@@ -34,7 +31,6 @@ Rails.application.routes.draw do
   get 'users/:id/edit' => 'users#edit'
   post 'users/create' => 'users#create'
   get 'signup' => 'users#new'
-  get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show'
   post 'login' => 'users#login'
   post 'logout' => 'users#logout'

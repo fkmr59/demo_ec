@@ -15,46 +15,73 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("top", "/") %>
+        <%= link_to("DemoSiteEc", "/") %>
       </div>
+        <ul class="header-menus">
+          <% if @current_user %>
+            <li>
+              <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+            </li>
+            <li>
+              <%= link_to("出品投稿", "/items/new")%>
+            </li>
+            <li>
+              <%= link_to("出品一覧", "/items/index") %>
+            </li>
+            <li>
+              <%= link_to("カート", "/carts/index") %>
+            </li>
+            <li>
+              <%= link_to("注文履歴", "/orders/show") %>
+            </li>
+            <li>
+              <%= link_to("ログアウト", "/logout", {method: "post"}) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to("ユーザー登録", "signup") %>
+            </li>
+            <li>
+              <%= link_to("ログイン", "/login") %>
+            </li>
+          <% end %>
+        </ul>
       
-      <ul class="header-menus">
-        <% if @current_user %>
-          <li>
-            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-          </li>
-          <li>
-            <%= link_to("新規掲載", "/items/new")%>
-          </li>
-          <li>
-            <%= link_to("アイテム一覧", "/items/index") %>
-          </li>
-          <li>
-            <%= link_to("ユーザー一覧", "/users/index") %>
-          </li>
-          <li>
-            <%= link_to("カート一覧", "/carts/index") %>
-          </li>
-          <li>
-            <%= link_to("注文履歴", "/orders/show") %>
-          </li>
-          <li>
-            <%= link_to("ログアウト", "/logout", {method: "post"}) %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to("新規登録", "signup") %>
-          </li>
-          <li>
-            <%= link_to("ログイン", "/login") %>
-          </li>
-          
-          <li>
-            <%= link_to("test", "/tests/index") %>
-          </li>
-          
-        <% end %>
-      </ul>
+          <div class="nav">
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+              <label for="drawer_input" class="drawer_open"><span></span></label>
+                <nav class="nav_content">
+                  <ul class="nav_list">
+                    <% if @current_user %>
+                      <li class="nav_item">
+                        <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+                      </li>
+                      <li class="nav_item">
+                        <%= link_to("出品投稿", "/items/new")%>
+                      </li>
+                      <li class="nav_item">
+                        <%= link_to("出品一覧", "/items/index") %>
+                      </li>
+                      <li class="nav_item">
+                        <%= link_to("カート", "/carts/index") %>
+                      </li>
+                      <li class="nav_item">
+                        <%= link_to("注文履歴", "/orders/show") %>
+                      </li>
+                      <li class="nav_item">
+                        <%= link_to("ログアウト", "/logout", {method: "post"}) %>
+                      </li>
+                    <% else %>
+                      <li class="nav_item">
+                        <%= link_to("ユーザー登録", "signup") %>
+                      </li>
+                      <li class="nav_item">
+                        <%= link_to("ログイン", "/login") %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </nav>
+          </div>
     </header>
     
     <% if flash[:notice] %>

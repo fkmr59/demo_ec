@@ -1,12 +1,15 @@
-<div class="main items-new">
+<div class="main items-edit">
   <div class="container">
     <h1 class="form-heading">編集する</h1>
       <%= form_tag("/items/#{@item.id}/update",{multipart: true}) do %>
         <div class="form">
           <div class="form-body">
+            <label>商品名</label>
             <textarea name="name"><%= @item.name %></textarea>
+            <label>価格</label>
             <textarea name="price"><%= @item.price %></textarea>
             <input name="image" type="file">
+            <label>商品説明</label>
             <textarea name="content"><%= @item.content %></textarea>
             <input type="submit" value="保存">
           </div>

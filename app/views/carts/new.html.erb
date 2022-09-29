@@ -1,10 +1,12 @@
 <div class="main carts-new">
   <div class="container">
-    <h1 class="form-heading">カートに入れる</h1>
+    <h1 class="form-heading">カート</h1>
       <p>
         <%= @item.id %>
+        <label>商品名</label>
         <%= @item.name %>
-        <%= @item.price %>
+        <label>価格</label>
+        <%= @item.price %><label>円</label>
       </p>
       <%= form_tag("/carts/#{@item.id}/create") do %>
         <div class="form">
@@ -14,6 +16,7 @@
               <%= message %>
             </div>
             <% end %>
+            <label>注文する個数を入力</label>
             <input type="number" name="quantity" min="0">
             <input type="submit" value="カートに入れる">
           </div>

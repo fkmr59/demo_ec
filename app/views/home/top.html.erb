@@ -1,21 +1,20 @@
 <div class="main top-main">
   <div class="top-message">
-    <h2>demo_ec</h2>
-    <p>サブタイ</p>
+    <h2>UMAI</h2>
+    <p>~不格好でもいいじゃないか~</p>
   </div>
   <div class="top-container">
     <% @items.each do |item| %>
-      <div class="item-index-item">
-        <%= link_to(item.name, "/items/#{item.id}") %>
-      </div>
-      <div class="item-left">
-        <img src="<%= "/user_images/#{item.user.image_name}" %>">
-      </div>
-      <div class="item-right">
-        <div class="item-user-name">
-          <%= link_to(item.content, "/items/#{item.id}") %>
+    <div class="item-box">
+        <div class="item-top">
+          <%= link_to(item.name, "/items/#{item.id}") %>
         </div>
-          <%= link_to(item.user.name, "/users/#{item.user.id}") %>
+        <div class="item-left">
+          <img src="<%= "/item_images/#{item.image_name}" %>">
+        </div>
+        <div class="item-right">
+          <%= link_to(item.price, "/items/#{item.id}") %><label>円</label>
+        </div>
       </div>
     <% end %>
   </div>
