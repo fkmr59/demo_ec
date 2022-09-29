@@ -6,18 +6,18 @@
    
 ## 特徴
    
-   出品の簡素化を目標に構築
+ - 出品の簡素化を目標に構築
    
 ## 環境構成
 
-   ruby 3.1.2
-   Rails 7.0.2.3
-   psql (PostgreSQL) 10.22
-   payjp
+ - ruby 3.1.2
+ - Rails 7.0.2.3
+ - psql (PostgreSQL) 10.22
+ - payjp
   
 ## 使用技術
    
-   AWS
+ - AWS
    
 ## 課題（今後の改善等）
    
